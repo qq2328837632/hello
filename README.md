@@ -20,6 +20,47 @@ git pull origin main
 
 git push -u origin main
 现在，应该能够成功将本地代码推送到远程仓库中。
+后面的更新
+
+
+
+
+如果你想要将多个文件一次性推送到远程仓库而不进行逐个文件的暂存，你可以使用以下命令来简化操作:
+
+在你的本地项目目录中，将所有要添加的文件放置在 _posts 文件夹中。
+
+打开命令行或终端，并进入项目目录。
+
+直接提交所有文件的更改。运行以下命令：
+
+git commit -am "Add multiple posts"
+这会自动将所有已修改的文件添加到暂存区并提交更改。注意，这种方法只适用于已跟踪（tracked）的文件。
+
+推送你的更改到远程仓库。运行以下命令：
+
+git push origin main
+这会将你的提交推送到名为 origin 的远程仓库的 main 分支。如果你的远程分支不是 main，请相应地修改命令。
+
+通过使用 -a 选项，git commit 命令将自动添加所有已修改的文件到暂存区（不需要显式使用 git add），然后进行提交。
+但请注意，这种方法只适用于已经被Git跟踪（已经被添加到版本控制）的文件。如果有新的文件需要添加到追踪列表中，仍然需要使用 git add 命令将它们添加到暂存区
+
+即
+$ git commit -am "Add multiple posts"
+[main 283cb79] Add multiple posts
+ 1 file changed, 63 insertions(+), 1 deletion(-)
+
+
+86191@LAPTOP-14LS7DVE MINGW64 /c/Blog/source (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.73 KiB | 1.73 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:qq2328837632/hello.git
+   8b4ab8b..283cb79  main -> main
+
 ```
 
 ```
